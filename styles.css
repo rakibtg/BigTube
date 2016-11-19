@@ -1,0 +1,45 @@
+html, body {
+  background: #444;
+  padding: 0px;
+  margin: 0px;
+  font-family: monospace;
+}
+header {
+  
+}
+.logo {
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    background-color: #4c4c4c;
+    font-size: 14px;
+    display: inline-block;
+    cursor: default;
+}
+
+form {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    min-width: 40%;
+}
+
+input {
+    padding: 0px;
+    margin: 0px;
+    height: 26px;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    background-color: #444;
+    width: 100%;
+    outline: none;
+    color: #ccc;
+    border-bottom: 2px solid #666;
+}
+
+iframe {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
