@@ -22,7 +22,6 @@ Go to [BigTube Demo](https://cdn.rawgit.com/rakibtg/BigTube/master/index.html) a
 
 ***
 
-That's better! 
-# 🙌
-[@rakibtg](https://twitter.com/rakibtg)
+That's better! 🙌 
+By [@rakibtg](https://twitter.com/rakibtg)
 
