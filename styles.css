@@ -54,4 +54,9 @@ div.controller {
   padding: 3px;
   color: #ddd;
   cursor: pointer;
+  opacity: 0.5;
+}
+
+div.controller:hover {
+  opacity: 1;
 }

@@ -53,8 +53,8 @@
     function yo () {
       $( document ).ready( function () {
         let player = $( 'iframe' );
-        player.width( $( window ).width() - 20 );
-        player.height( $( window ).height() - 10 );
+        player.width( $( window ).width() - 0 );
+        player.height( $( window ).height() );
       } );
     }
     yo();
