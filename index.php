@@ -1,8 +1,10 @@
 <?php
   $playable = '';
+  $hideNav = '';
   if ( isset( $_POST['url'] ) ) {
     if ( ! empty( $_POST['url'] ) ) {
       $playable = $_POST['url'];
+      $hideNav = 'display: none;';
     }
   }
   function getYoutubeIdFromUrl($url) {
@@ -30,7 +32,8 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header>
+  <div class="controller">Toggle Header</div>
+  <header style="<?php echo $hideNav ?>">
     <div class="logo">BigTube!</div>
     <form action="." method="post">
       <input type="text" name="url" placeholder="Youtube link here ..." value="<?php echo $playable ?>">
@@ -51,12 +54,16 @@
       $( document ).ready( function () {
         let player = $( 'iframe' );
         player.width( $( window ).width() - 20 );
-        player.height( $( window ).height() - $( 'header' ).height() - 10 );
+        player.height( $( window ).height() - 10 );
       } );
     }
     yo();
-    $( window ).resize(function() {
+    $( window ).resize( function( ) {
       yo();
+    });
+    $( '.controller' ).click( function( ev ){
+      ev.preventDefault();
+      $( 'header' ).slideToggle();
     });
   </script>
 </body>

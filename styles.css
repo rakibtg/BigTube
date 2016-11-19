@@ -43,3 +43,14 @@ iframe {
   padding: 0px;
   margin: 0px;
 }
+
+div.controller {
+  position: absolute;
+  background-color: #888;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 4px;
+  padding: 3px;
+  color: #ddd;
+  cursor: pointer;
+}
