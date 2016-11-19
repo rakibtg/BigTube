@@ -50,13 +50,57 @@ div.controller {
   background-color: #888;
   right: 0;
   top: 0;
-  border-bottom-left-radius: 4px;
   padding: 3px;
-  color: #ddd;
+  color: #fff;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.3;
+  height: 30px;
+  line-height: 30px;
 }
 
 div.controller:hover {
   opacity: 1;
+}
+
+div.playerwrapper {
+  display: none;
+  text-align: center;
+}
+
+div.author {
+  display: inline-block;
+  color: #ccc;
+}
+
+div.author a {
+  color: #ddd;
+  text-decoration: none;
+  border-bottom: 2px solid #666;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.invalidurl {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

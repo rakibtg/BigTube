@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BigTube!</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="controller" title="Toggle header(slide up/slide down)">Toggle</div>
+  <header>
+
+    <div class="logo">BigTube!</div>
+
+    <form action="." method="post">
+      <input class="" type="text" name="url" placeholder="Youtube link here ..." value="" autocomplete="off">
+    </form>
+
+    <div class="author">
+      Tweet thoughts <a href="https://twitter.com/rakibtg" target="_blank">@rakibtg</a>
+       - <a href="https://github.com/rakibtg/BigTube" target="_blank" title="Project Homepage">GitHub</a>
+    </div>
+
+  </header>
+
+  <div class="playerwrapper">
+    <iframe class="video-player" src="https://www.youtube.com/embed/"></iframe>
+  </div>
+
+  <script src="./jquery-3.1.1.min.js"></script>
+  <script>
+
+    let videoForm   = $( 'form' ),
+    iframeObj       = $( 'iframe' ),
+    headerObj       = $( 'header' ),
+    inputObj        = $( videoForm.find( 'input' ) );
+
+    inputObj.removeClass( "invalidurl" );
+
+    function yo () {
+      $( document ).ready( () => {
+        iframeObj.width( $( window ).width() - 0 );
+        iframeObj.height( $( window ).height() );
+      } );
+    }
+
+    yo();
+
+    $( window ).resize( ( ) => yo() );
+
+    $( '.controller' ).click( ( ev ) => {
+      ev.preventDefault();
+      headerObj.slideToggle();
+    });
+
+    videoForm.submit( ( e ) => {
+      e.preventDefault();
+      // Fetch the video id
+      let videoid = inputObj.val().match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+      if( videoid != null ) {
+        iframeObj.attr( 'src', 'https://www.youtube.com/embed/'+videoid[1]+'?autoplay=1' );
+        iframeObj.parent().fadeIn();
+        inputObj.css({
+          borderBottomColor: '#666666'
+        });
+        headerObj.slideUp();
+        inputObj.removeClass( "invalidurl" );
+      } else { 
+        inputObj.css({
+          borderBottomColor: '#f47373'
+        });
+        inputObj.addClass( "invalidurl" );
+        setTimeout( () => {
+          inputObj.removeClass( "invalidurl" );
+        }, 1000 );
+      }
+    } );
+
+  </script>
+</body>
+</html>
